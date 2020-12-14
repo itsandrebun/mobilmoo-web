@@ -1,0 +1,191 @@
+*{
+    font-family:MontserratAlternatesMedium;
+}
+
+.auth-form{
+    padding-top:40px;
+    padding-right:40px;
+    padding-bottom:40px;
+}
+
+label, a{
+    font-family:MontserratAlternatesMedium;
+}
+
+.auth-form label{
+    font-family:MontserratAlternatesBold;
+}
+
+.auth-form label.form-check-label{
+    font-family:MontserratAlternatesMedium;
+}
+
+.auth-title{
+    font-family:MontserratAlternatesBold;
+}
+
+div.mb-3 input.form-control{
+    margin: 5px 0 0;
+    padding: 11px 424px 12px 14px;
+    border-radius: 8px;
+    border: solid 1px #7f7f7f;
+    background-color: #ffffff;
+}
+
+.redirect-to-login a{
+    text-decoration: none;
+    color: #086dff;
+}
+
+.mobilmoo-introduction h1{
+    font-size:45px;
+    font-family:MontserratAlternatesBold;
+}
+
+.dropdown-menu-right {
+    right: 0!important;
+    left: auto!important;
+}
+
+.navbar-brand{
+    font-family:MontserratAlternatesBold;
+    color:#ffffff;
+}
+
+.mobilmoo-introduction img{
+    width:100%;
+    max-height: 100vh;
+    margin:auto;
+    display: block;
+}
+
+.mobilmoo-introduction{
+    text-align:center;
+    background-color: #086dff;
+    color:#ffffff;
+}
+
+.mobilmoo-introduction p{
+    font-size:18px;
+    font-family:MontserratAlternatesMedium;
+}
+
+.opening{
+    background:#086dff;
+    width:100%;
+    min-height:100px;
+}
+
+.navbar-nav li a{
+    color:#ffffff;
+    font-family: MontserratAlternatesMedium;
+}
+
+#sell_car_button{
+    color:#086dff;
+    font-family: MontserratAlternatesBold;
+}
+
+.btn-white{
+    background-color:#ffffff!important;
+    border-color: #ffffff!important;
+}
+
+.navbar-expand-lg{
+    padding-left:50px;
+}
+
+.content{
+    padding-left:60px;
+    color:#ffffff;
+    padding-top:55px;
+    padding-bottom:55px;
+    min-height:200px;
+}
+.content p{
+    font-family:MontserratAlternatesBold;
+    font-size: 64px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+#browse_car_button{
+    font-family:MontserratAlternatesBold;
+    font-size:24px;
+    color: #086dff;
+    padding-top:10px;
+    padding-right:10px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.go-to-list{
+    text-align:center;
+    color:#ffffff;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.go-to-list i{
+    cursor: pointer;
+}
+
+.explanation{
+    text-align: center;
+    min-height:100px;
+    width:100%;
+}
+
+.explanation h1{
+    font-family: MontserratAlternatesBold;
+}
+
+.explanation span{
+    font-family: MontserratAlternatesMedium;
+}
+
+.explanation-list{
+    margin-bottom:30px;
+}
+
+.explanation-list .card{
+    min-height:250px;
+    border-radius: 16px;
+    box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.explanation-list .card-title{
+    text-align: center;
+    font-family: MontserratAlternatesBold;
+    min-height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explanation-list .card-text{
+    font-family: MontserratAlternatesMedium;
+    font-size:14px;
+}
+
+.line{
+    border:0.5px solid black;
+    margin-bottom:20px;
+}
+
+.car-type{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.car-type .btn-group button{
+    font-family: MontserratAlternatesBold;
+}
