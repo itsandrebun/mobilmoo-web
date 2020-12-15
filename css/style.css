@@ -302,6 +302,7 @@ div.mb-3 input.form-control{
 }
 
 #try_moobot{
+    margin-top:15px;
     width:40%;
     font-family: MontserratAlternatesBold;
     font-size: 24px;
