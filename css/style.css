@@ -4,7 +4,8 @@
 
 .auth-form{
     padding-top:40px;
-    padding-right:40px;
+    padding-right:48px;
+    padding-left:48px;
     padding-bottom:40px;
 }
 
@@ -63,6 +64,8 @@ div.mb-3 input.form-control{
     text-align:center;
     background-color: #086dff;
     color:#ffffff;
+    padding-left:50px;
+    padding-right:50px;
 }
 
 .mobilmoo-introduction p{
