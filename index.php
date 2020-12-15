@@ -28,8 +28,8 @@
                                     Buy a Car
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">New Cars</a></li>
-                                    <li><a class="dropdown-item" href="#">Preowned Cars</a></li>
+                                    <li><a class="dropdown-item" href="#" style="color:#000000">New Cars</a></li>
+                                    <li><a class="dropdown-item" href="#" style="color:#000000">Preowned Cars</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -64,7 +64,7 @@
                     <button class="btn btn-white w-50 mt-3" id="browse_car_button" style="text-align:left">Browse Car <img src="img/arrow_right.png" style="float:right" alt=""></button>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end">
-                    <img src="img/car_opening.png" alt="">
+                    <img src="img/car_opening.png" id="car-opening" alt="">
                 </div>
             </div>
             <div class="go-to-list">
@@ -108,18 +108,151 @@
         </div>
         <div class="inspection-booking"></div>
         <div class="car-list">
-            <div class="car-type">
+            <div class="car-list-title">
+                <h1>Featured Cars</h1>
+                <span>Find your next vehicle with the best quality and deal here!</span>
+            </div>
+            <!-- <div class="car-type">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-white" id="new_car_tab">New Car</button>
                     <button type="button" class="btn btn-primary" id="used_car_tab">Used Car</button>
                 </div>
             </div>
             <div class="car-list-based-on-type">
-
+                
+            </div> -->
+            <div class="car-list-content">
+                <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="new-car-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">New Car</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="used-car-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Used Car</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="new-car-tab">
+                        <div class="row flex-nowrap">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="img/MINI-Cooper-S-Convertible-F57-09-1024x683.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <div class="card-detail">
+                                            <span>DKI Jakarta</span>
+                                            <span>2019</span>
+                                            <span>New Car</span>
+                                        </div>
+                                        <span class="car-price">120000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <div class="card-detail">
+                                            <span>DKI Jakarta</span>
+                                            <span>2019</span>
+                                            <span>New Car</span>
+                                        </div>
+                                        <span class="car-price">120000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <div class="card-detail">
+                                            <span>DKI Jakarta</span>
+                                            <span>2019</span>
+                                            <span>New Car</span>
+                                        </div>
+                                        <span class="car-price">120000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <div class="card-detail">
+                                            <span>DKI Jakarta</span>
+                                            <span>2019</span>
+                                            <span>New Car</span>
+                                        </div>
+                                        <span class="car-price">120000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <div class="card-detail">
+                                            <span>DKI Jakarta</span>
+                                            <span>2019</span>
+                                            <span>New Car</span>
+                                        </div>
+                                        <span class="car-price">120000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="used-car-tab">
+                        <div class="row flex-nowrap">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <div class="card-detail">
+                                            <span>DKI Jakarta</span>
+                                            <span>2019</span>
+                                            <span>New Car</span>
+                                        </div>
+                                        <span class="car-price">120000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special title treatment</h5>
+                                        <div class="card-detail">
+                                            <span>DKI Jakarta</span>
+                                            <span>2019</span>
+                                            <span>New Car</span>
+                                        </div>
+                                        <span class="car-price">120000000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="moobot-recommendation">
-
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="img/person_chatting.png" id="person_chatting" alt="">
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                    <div>
+                        <h1>Still don’t know which car to choose?</h1>
+                        <p>MooBot can help you find the car that are best-suited for you</p>
+                        <button class="btn btn-white" style="text-align:left" id="try_moobot">Try MooBot Now <img src="img/arrow_right.png" style="float:right" alt=""></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
