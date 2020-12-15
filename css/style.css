@@ -86,6 +86,17 @@ div.mb-3 input.form-control{
     font-family: MontserratAlternatesBold;
 }
 
+#next_button{
+    color:#ffffff;
+    font-family: MontserratAlternatesBold;
+    width:100%;
+    font-size: 24px;
+}
+
+.stepper{
+    background: #ffffff;
+}
+
 .btn-white{
     background-color:#ffffff!important;
     border-color: #ffffff!important;
@@ -238,23 +249,30 @@ div.mb-3 input.form-control{
     border-radius:10px;
 }
 
+.car-list-content div.scrollable-content{
+    overflow-x:auto;
+    /* width:50%; */
+    margin:0 auto;
+}
+
 .car-list-content .tab-content .row{
-    overflow-x: auto;
+    /* overflow-x: auto; */
     padding-top:30px;
     padding-bottom:20px;
 }
 
-.car-list-content .tab-content .row::-webkit-scrollbar {
+.car-list-content div.scrollable-content::-webkit-scrollbar {
     width:10px;
     height:7px;
 }
 
-.car-list-content .tab-content .row::-webkit-scrollbar-thumb {
+.car-list-content div.scrollable-content::-webkit-scrollbar-thumb {
     background-color: #086dff;
 }
 
-.car-list-content .tab-content .row::-webkit-scrollbar-track {
+.car-list-content div.scrollable-content::-webkit-scrollbar-track {
     background: #e7f1ff; 
+    width:100%;
 }
 
 .car-list-content .car-price{
@@ -303,7 +321,7 @@ div.mb-3 input.form-control{
 
 #try_moobot{
     margin-top:15px;
-    width:40%;
+    width:50%;
     font-family: MontserratAlternatesBold;
     font-size: 24px;
     color: #086dff;
@@ -312,4 +330,76 @@ div.mb-3 input.form-control{
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 8px;
+}
+
+.mobilmoo-footer{
+    width:100%;
+    min-height:200px;
+}
+.mobilmoo-footer h1{
+    font-family:MontserratAlternatesBold;
+    color:#086dff;
+}
+
+.mobilmoo-footer .footer-title{
+    font-family:MontserratAlternatesBold;
+    font-size:18px;
+}
+
+.mobilmoo-footer ul.social-media{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.mobilmoo-footer ul.list-unstyled li a{
+    text-decoration: none;
+    font-family:MontserratAlternatesMedium;
+    color:#000000;
+    font-size: 18px;
+}
+
+.mobilmoo-footer-logo{
+    text-align:center;
+}
+
+.inspection-booking{
+    /* padding:6rem; */
+    width:100%;
+    min-height:100px;
+    background-color: #086dff;
+    padding-top:50px;
+    padding-bottom:50px;
+    padding-left:25px;
+    padding-right:25px;
+    position: relative;
+    background-image: url('../img/flying_person.png');
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+
+.inspection-booking-picture{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.inspection-booking label{
+    font-family:MontserratAlternatesBold;
+}
+
+.inspection-booking h1{
+    color:#ffffff;
+    font-family: MontserratAlternatesBold;
+    font-size:64px;
+}
+
+.inspection-booking p{
+    font-size: 18px;
+    color:#ffffff;
+    font-family: MontserratAlternatesMedium;
 }
