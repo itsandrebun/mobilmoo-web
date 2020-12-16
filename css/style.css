@@ -33,7 +33,7 @@ div.mb-3 input.form-control{
     background-color: #ffffff;
 }
 
-.redirect-to-login a{
+.redirect-to-login a, .redirect-to-register a{
     text-decoration: none;
     color: #086dff;
 }
