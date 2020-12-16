@@ -6,6 +6,35 @@
     <?php
         session_start();
     ?>
+    <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "mobilmoo";
+
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                // Check connection
+                if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+                }
+
+                $sql = "SELECT * FROM cars";
+                $result = $conn->query($sql);
+                $car_data = array();
+
+                if ($result->num_rows > 0) {
+                // output data of each row
+                    while($row = $result->fetch_assoc()) 
+                    {
+                        array_push($car_data, $row);
+                    //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                    }
+                }else {
+                echo "0 results";
+                }
+                $conn->close();
+            ?>
     <div class="container-fluid">
         <div class="opening">
             <nav class="navbar navbar-expand-lg bg-transparent">
@@ -155,109 +184,47 @@
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="new-car-tab">
                         <div class="scrollable-content">
                             <div class="row flex-nowrap">
+                            <?php for ($i=0; $i < count($car_data); $i++) :?>
+                                <?php if($car_data[$i]['car_type'] == 1):?>
                                 <div class="col-sm-3">
                                     <div class="card">
                                         <img src="img/MINI-Cooper-S-Convertible-F57-09-1024x683.jpg" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <h5 class="card-title">Special title treatment</h5>
+                                            <h5 class="card-title"><?php echo $car_data[$i]['car_name'];?></h5>
                                             <div class="card-detail">
-                                                <span>DKI Jakarta</span>
-                                                <span>2019</span>
-                                                <span>New Car</span>
+                                                <span><?php echo $car_data[$i]['car_location'];?></span>
+                                                <span><?php echo $car_data[$i]['car_releasedyear'];?></span>
+                                                <span><?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas');?></span>
                                             </div>
-                                            <span class="car-price">120000000</span>
+                                            <span class="car-price"><?php echo $car_data[$i]['car_price'];?></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="card">
-                                        <img src="..." class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Special title treatment</h5>
-                                            <div class="card-detail">
-                                                <span>DKI Jakarta</span>
-                                                <span>2019</span>
-                                                <span>New Car</span>
-                                            </div>
-                                            <span class="car-price">120000000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="card">
-                                        <img src="..." class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Special title treatment</h5>
-                                            <div class="card-detail">
-                                                <span>DKI Jakarta</span>
-                                                <span>2019</span>
-                                                <span>New Car</span>
-                                            </div>
-                                            <span class="car-price">120000000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="card">
-                                        <img src="..." class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Special title treatment</h5>
-                                            <div class="card-detail">
-                                                <span>DKI Jakarta</span>
-                                                <span>2019</span>
-                                                <span>New Car</span>
-                                            </div>
-                                            <span class="car-price">120000000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="card">
-                                        <img src="..." class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Special title treatment</h5>
-                                            <div class="card-detail">
-                                                <span>DKI Jakarta</span>
-                                                <span>2019</span>
-                                                <span>New Car</span>
-                                            </div>
-                                            <span class="car-price">120000000</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endif;?>
+                                <?php endfor;?>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="used-car-tab">
                         <div class="row flex-nowrap">
+                        <?php for ($i=0; $i < count($car_data); $i++) :?>
+                            <?php if($car_data[$i]['car_type'] == 0):?>
                             <div class="col-sm-3">
                                 <div class="card">
                                     <img src="..." class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
+                                        <h5 class="card-title"><?php echo $car_data[$i]['car_name'];?></h5>
                                         <div class="card-detail">
-                                            <span>DKI Jakarta</span>
-                                            <span>2019</span>
-                                            <span>New Car</span>
+                                            <span><?php echo $car_data[$i]['car_location'];?></span>
+                                            <span><?php echo $car_data[$i]['car_releasedyear'];?></span>
+                                            <span><?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas');?></span>
                                         </div>
-                                        <span class="car-price">120000000</span>
+                                        <span class="car-price"><?php echo $car_data[$i]['car_price'];?></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <div class="card-detail">
-                                            <span>DKI Jakarta</span>
-                                            <span>2019</span>
-                                            <span>New Car</span>
-                                        </div>
-                                        <span class="car-price">120000000</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endif;?>
+                            <?php endfor;?>
                         </div>
                     </div>
                 </div>
