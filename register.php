@@ -64,7 +64,7 @@
                             if(empty($_POST['fullname'])){
                                 $fullname_validation = "Fullname is required";
                             }
-                            if(strlen($_POST['fullname']) <= 2 || strlen($_POST['fullname']) >= 50){
+                            if(strlen($_POST['fullname']) < 2 || strlen($_POST['fullname']) > 50){
                                 $fullname_validation = "Fullname must contain min 2 characters and max 50 characters";
                             }
                             if(empty($_POST['phone_number'])){
@@ -73,7 +73,7 @@
                             if(!is_numeric($_POST['phone_number'])){
                                 $phone_number_validation = "Phone Number must be number";
                             }
-                            if(strlen($_POST['phone_number']) <= 10 || strlen($_POST['phone_number']) >= 15){
+                            if(strlen($_POST['phone_number']) < 10 || strlen($_POST['phone_number']) > 15){
                                 $phone_number_validation = "Phone number must contain min 10 characters and max 15 characters";
                             }
                             if(empty($_POST['email'])){
@@ -82,7 +82,7 @@
                             if(strpos($_POST['email'], '@') == false){
                                 $email_validation = "Email must contain @";
                             }
-                            if(strlen($_POST['email']) <= 10){
+                            if(strlen($_POST['email']) < 10){
                                 $email_validation = "Email must contain min 10 characters";
                             }
                             if(empty($_POST['password'])){
@@ -91,7 +91,7 @@
                             if(!preg_match('/[A-Z]/', $_POST['password'])){
                                 $password_validation = "Password must contain at least 1 uppercase";
                             }
-                            if(strlen($_POST['password']) <= 6){
+                            if(strlen($_POST['password']) < 6){
                                 $password_validation = "Password must contain min 6 characters";
                             }
                             if(!isset($_POST['agree'])){
