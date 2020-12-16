@@ -194,7 +194,8 @@
                                             <div class="card-detail">
                                                 <span><?php echo $car_data[$i]['car_location'];?></span>
                                                 <span><?php echo $car_data[$i]['car_releasedyear'];?></span>
-                                                <span><?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas');?></span>
+                                                <span><?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas
+                                                ');?></span>
                                             </div>
                                             <span class="car-price"><?php echo $car_data[$i]['car_price'];?></span>
                                         </div>
