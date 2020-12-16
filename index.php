@@ -3,38 +3,35 @@
 ?>
 <?php include 'templates/header.php';?>
   <body>
+    
     <?php
         session_start();
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "mobilmoo";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM cars";
+        $result = $conn->query($sql);
+        $car_data = array();
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) 
+            {
+                array_push($car_data, $row);
+                //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+            }
+        }
+        $conn->close();
     ?>
-    <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "mobilmoo";
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-                }
-
-                $sql = "SELECT * FROM cars";
-                $result = $conn->query($sql);
-                $car_data = array();
-
-                if ($result->num_rows > 0) {
-                // output data of each row
-                    while($row = $result->fetch_assoc()) 
-                    {
-                        array_push($car_data, $row);
-                    //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-                    }
-                }else {
-                echo "0 results";
-                }
-                $conn->close();
-            ?>
+    
     <div class="container-fluid">
         <div class="opening">
             <nav class="navbar navbar-expand-lg bg-transparent">
@@ -65,17 +62,33 @@
                             <li class="nav-item">
                                 <button class="btn btn-white" id="sell_car_button">Sell Car</button>
                             </li>
-                            <?php if(isset($_SESSION['user'])):?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-user-circle"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <?php if(isset($_SESSION['sess_username'])):?>
                                     <li><a class="dropdown-item" href="#" style="color:#000000">Profile</a></li>
-                                    <li><a class="dropdown-item" href="#" style="color:#000000">Logout</a></li>
+                                    <li>
+                                        <a class="dropdown-item" onclick="document.getElementById('logout-form').submit();" href="#" style="color:#000000">
+                                            <?php
+                                                if(isset($_POST['logout'])){
+                                                    session_destroy();
+                                                    header('Location:index.php');
+                                                }
+                                            ?>
+                                            <form method="POST" id="logout-form">
+                                                <input type="hidden" name="logout" value="logout">
+                                            </form>
+                                            Logout
+                                        </a>
+                                    </li>
+                                    <?php else:?>
+                                    <li><a class="dropdown-item" href="login.php" style="color:#000000">Login</a></li>
+                                    <li><a class="dropdown-item" href="register.php" style="color:#000000">Register</a></li>
+                                    <?php endif;?>
                                 </ul>
                             </li>
-                            <?php endif;?>
                         </ul>
                     </div>
                 </div>
@@ -129,9 +142,6 @@
             </div>
         </div>
         <div class="inspection-booking">
-            <!-- <div class="inspection-booking-picture">
-                <img src="img/flying_person.png" alt="">
-            </div> -->
             <div class="row">
                 <div class="col-md-6">
                     <div class="p-5" style="padding-left:5rem!important;padding-right:5rem!important">
@@ -192,9 +202,9 @@
                                         <div class="card-body">
                                             <h5 class="card-title"><?php echo $car_data[$i]['car_name'];?></h5>
                                             <div class="card-detail">
-                                                <span><?php echo $car_data[$i]['car_location'];?></span>
-                                                <span><?php echo $car_data[$i]['car_releasedyear'];?></span>
-                                                <span><?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas
+                                                <span><i class="fa fa-map-marker-alt"></i> <?php echo $car_data[$i]['car_location'];?></span>
+                                                <span><i class="fa fa-calendar"></i> <?php echo $car_data[$i]['car_releasedyear'];?></span>
+                                                <span><i class="fa fa-car"></i> <?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas
                                                 ');?></span>
                                             </div>
                                             <span class="car-price"><?php echo $car_data[$i]['car_price'];?></span>
@@ -212,13 +222,14 @@
                             <?php if($car_data[$i]['car_type'] == 0):?>
                             <div class="col-sm-3">
                                 <div class="card">
-                                    <img src="..." class="card-img-top" alt="...">
+                                    <img src="img/MINI-Cooper-S-Convertible-F57-09-1024x683.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $car_data[$i]['car_name'];?></h5>
                                         <div class="card-detail">
-                                            <span><?php echo $car_data[$i]['car_location'];?></span>
-                                            <span><?php echo $car_data[$i]['car_releasedyear'];?></span>
-                                            <span><?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas');?></span>
+                                            <span><i class="fa fa-map-marker-alt"></i> <?php echo $car_data[$i]['car_location'];?></span>
+                                            <span><i class="fa fa-calendar"></i> <?php echo $car_data[$i]['car_releasedyear'];?></span>
+                                            <span><i class="fa fa-car"></i> <?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas
+                                                ');?></span>
                                         </div>
                                         <span class="car-price"><?php echo $car_data[$i]['car_price'];?></span>
                                     </div>
@@ -300,7 +311,6 @@
             </div>
         </div>
     </div>
-
     <?php include "templates/footer.php";?>
   </body>
 </html>

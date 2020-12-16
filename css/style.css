@@ -239,6 +239,10 @@ div.mb-3 input.form-control{
 .car-list-content .card .card-title{
     font-family:RobotoBold;
     font-size: 24px;
+    min-height:90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .car-list-content .card{
@@ -250,6 +254,10 @@ div.mb-3 input.form-control{
     height: 15vw;
     object-fit: cover;
     border-radius:10px;
+}
+
+.invalid-feedback-red{
+    color:#ff0000!important;
 }
 
 .car-list-content div.scrollable-content{
