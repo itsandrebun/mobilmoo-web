@@ -32,7 +32,7 @@
                                     $_SESSION['sess_username'] = $user_name;
                                     header("Location: index.php"); 
                                 } else {  
-                                    echo "<script language='javascript'>Invalid username or password!</script>";  
+                                    echo "<script language='javascript'>alert('Invalid username or password!')</script>";  
                                 }  
                                         
                             } else {  

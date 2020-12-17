@@ -54,7 +54,6 @@
                                     echo '<script language="javascript">';
                                     echo 'alert("Cannot create this account")';
                                     echo '</script>';
-                                    // echo "Failure!".$con->error;  
                                 }
                         
                             } else {
@@ -64,34 +63,34 @@
                             if(empty($_POST['fullname'])){
                                 $fullname_validation = "Fullname is required";
                             }
-                            if(strlen($_POST['fullname']) < 2 || strlen($_POST['fullname']) > 50){
+                            if(!empty($_POST['fullname']) && (strlen($_POST['fullname']) < 2 || strlen($_POST['fullname']) > 50)){
                                 $fullname_validation = "Fullname must contain min 2 characters and max 50 characters";
                             }
                             if(empty($_POST['phone_number'])){
-                                $phone_number_validation = "phone number is required";
+                                $phone_number_validation = "Phone Number is required";
                             }
-                            if(!is_numeric($_POST['phone_number'])){
-                                $phone_number_validation = "Phone Number must be number";
-                            }
-                            if(strlen($_POST['phone_number']) < 10 || strlen($_POST['phone_number']) > 15){
+                            if(!empty($_POST['phone_number']) && (strlen($_POST['phone_number']) < 10 || strlen($_POST['phone_number']) > 15)){
                                 $phone_number_validation = "Phone number must contain min 10 characters and max 15 characters";
+                            }
+                            if(!empty($_POST['phone_number']) && !is_numeric($_POST['phone_number'])){
+                                $phone_number_validation = "Phone Number must be number";
                             }
                             if(empty($_POST['email'])){
                                 $email_validation = "Email is required";
                             }
-                            if(strpos($_POST['email'], '@') == false){
+                            if(!empty($_POST['email']) && strpos($_POST['email'], '@') == false){
                                 $email_validation = "Email must contain @";
                             }
-                            if(strlen($_POST['email']) < 10){
+                            if(!empty($_POST['email']) && strlen($_POST['email']) < 10){
                                 $email_validation = "Email must contain min 10 characters";
                             }
                             if(empty($_POST['password'])){
                                 $password_validation = "Password is required";
                             }
-                            if(!preg_match('/[A-Z]/', $_POST['password'])){
+                            if(!empty($_POST['password']) && !preg_match('/[A-Z]/', $_POST['password'])){
                                 $password_validation = "Password must contain at least 1 uppercase";
                             }
-                            if(strlen($_POST['password']) < 6){
+                            if(!empty($_POST['password']) && strlen($_POST['password']) < 6){
                                 $password_validation = "Password must contain min 6 characters";
                             }
                             if(!isset($_POST['agree'])){
