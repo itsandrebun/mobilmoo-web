@@ -8,7 +8,7 @@
             <div class="col-md-6 auth-form">
                 <div>
                     <div class="mt-3">
-                        <h2 class="auth-title" style="color:#086dff;cursor:pointer;text-align:left" onclick="window.location.href='index.php'">mobilmoo</h2>
+                        <h2 class="auth-title" style="color:#086dff;cursor:pointer;text-align:left" onclick="window.location.href='index'">mobilmoo</h2>
                     </div>
                     <?php
                         $username_validation = "";
@@ -29,7 +29,7 @@
                                 {
                                     session_start();
                                     $_SESSION['sess_username'] = $user_name;
-                                    header("Location: index.php"); 
+                                    header("Location: index"); 
                                 } else {  
                                     echo "<script language='javascript'>alert('Invalid username or password!')</script>";  
                                 }  
@@ -51,7 +51,7 @@
                             <div class="mb-5">
                                 <span>Hello! Nice to meet you.</span>
                                 <h1 class="auth-title">Sign In to Mobilmoo</h1>
-                                <span class="redirect-to-register">Don't have an account? <a href="register.php">Register</a></span>
+                                <span class="redirect-to-register">Don't have an account? <a href="register">Register</a></span>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Email/Phone Number</label>

@@ -7,12 +7,12 @@
         <div class="row">
             <div class="col-md-6 auth-form">
                 <div class="mt-3 mb-4">
-                    <h2 class="auth-title" style="color:#086dff;cursor:pointer" onclick="window.location.href = 'index.php'">mobilmoo</h2>
+                    <h2 class="auth-title" style="color:#086dff;cursor:pointer" onclick="window.location.href = 'index'">mobilmoo</h2>
                 </div>
                 <div class="mb-5">
                     <span>Let's get to know each other.</span>
                     <h1 class="auth-title">Sign Up to Mobilmoo</h1>
-                    <span class="redirect-to-login">Already have an account? <a href="login.php">Sign In</a></span>
+                    <span class="redirect-to-login">Already have an account? <a href="login">Sign In</a></span>
                 </div>
                 <?php
                     $phone_number_validation = "";
@@ -33,8 +33,7 @@
                             $user_email = $_POST['email'];  
                             $user_phonenumber = $_POST['phone_number'];
                             $user_password= password_hash($_POST['password'],PASSWORD_DEFAULT);  
-                            $con = mysqli_connect('localhost','root','','mobilmoo') or die(mysql_error());  
-                            // mysql_select_db('user_registration') or die("cannot select DB");  
+                            $con = mysqli_connect('localhost','root','','mobilmoo') or die(mysql_error()); 
                         
                             $query="SELECT * FROM user WHERE user_email='".$user_email."' or user_phonenumber='".$user_phonenumber."'";
                             $data = $con->query($query);
@@ -47,9 +46,9 @@
                                 $result= $con->query($sql);  
                                 if($result){
                                     echo '<script language="javascript">';
-                                    echo 'alert("Account Successfully Created")';
+                                    echo 'alert("Successfully create the account");';
+                                    echo 'window.location.href = "register";';
                                     echo '</script>';
-                                    header("Location:register.php"); 
                                 } else {
                                     echo '<script language="javascript">';
                                     echo 'alert("Cannot create this account")';

@@ -74,7 +74,7 @@
                                             <?php
                                                 if(isset($_POST['logout'])){
                                                     session_destroy();
-                                                    header('Location:index.php');
+                                                    echo "<script language='javascript'>alert('You are logout...');window.location.href='index';</script>";
                                                 }
                                             ?>
                                             <form method="POST" id="logout-form">
@@ -84,8 +84,8 @@
                                         </a>
                                     </li>
                                     <?php else:?>
-                                    <li><a class="dropdown-item" href="login.php" style="color:#000000">Login</a></li>
-                                    <li><a class="dropdown-item" href="register.php" style="color:#000000">Register</a></li>
+                                    <li><a class="dropdown-item" href="login" style="color:#000000">Login</a></li>
+                                    <li><a class="dropdown-item" href="register" style="color:#000000">Register</a></li>
                                     <?php endif;?>
                                 </ul>
                             </li>
@@ -201,11 +201,16 @@
                                         <img src="img/MINI-Cooper-S-Convertible-F57-09-1024x683.jpg" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <h5 class="card-title"><?php echo $car_data[$i]['car_name'];?></h5>
-                                            <div class="card-detail">
-                                                <span><i class="fa fa-map-marker-alt"></i> <?php echo $car_data[$i]['car_location'];?></span>
-                                                <span><i class="fa fa-calendar"></i> <?php echo $car_data[$i]['car_releasedyear'];?></span>
-                                                <span><i class="fa fa-car"></i> <?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas
-                                                ');?></span>
+                                            <div class="card-detail row">
+                                                <div class="col-md-4">
+                                                    <span><i class="fa fa-map-marker-alt"></i> <?php echo $car_data[$i]['car_location'];?></span>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <span><i class="fa fa-calendar"></i> <?php echo $car_data[$i]['car_releasedyear'];?></span>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <span><i class="fa fa-car"></i> <?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas');?></span>
+                                                </div>
                                             </div>
                                             <span class="car-price"><?php echo $car_data[$i]['car_price'];?></span>
                                         </div>
@@ -225,11 +230,16 @@
                                     <img src="img/MINI-Cooper-S-Convertible-F57-09-1024x683.jpg" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $car_data[$i]['car_name'];?></h5>
-                                        <div class="card-detail">
-                                            <span><i class="fa fa-map-marker-alt"></i> <?php echo $car_data[$i]['car_location'];?></span>
-                                            <span><i class="fa fa-calendar"></i> <?php echo $car_data[$i]['car_releasedyear'];?></span>
-                                            <span><i class="fa fa-car"></i> <?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas
-                                                ');?></span>
+                                        <div class="card-detail row">
+                                            <div class="col-md-4">
+                                                <span><i class="fa fa-map-marker-alt"></i> <?php echo $car_data[$i]['car_location'];?></span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span><i class="fa fa-calendar"></i> <?php echo $car_data[$i]['car_releasedyear'];?></span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <span><i class="fa fa-car"></i> <?php echo ($car_data[$i]['car_type'] == 1 ? 'Baru' : 'Bekas');?></span>
+                                            </div>
                                         </div>
                                         <span class="car-price"><?php echo $car_data[$i]['car_price'];?></span>
                                     </div>
@@ -266,10 +276,10 @@
                         <h5 class="footer-title">Company</h5>
                         <ul class="list-unstyled mt-3">
                             <li>
-                                <a href="void::javascript(0)">About Us</a>
+                                <a href="#">About Us</a>
                             </li>
                             <li>
-                                <a href="void::javascript(0)">Services</a>
+                                <a href="#">Services</a>
                             </li>
                         </ul>
                     </div>
@@ -277,13 +287,13 @@
                         <h5 class="footer-title">Help</h5>
                         <ul class="list-unstyled mt-3">
                             <li>
-                                <a href="void::javascript(0)">FAQ</a>
+                                <a href="#">FAQ</a>
                             </li>
                             <li>
-                                <a href="void::javascript(0)">Contact Us</a>
+                                <a href="#">Contact Us</a>
                             </li>
                             <li>
-                                <a href="void::javascript(0)">TnC</a>
+                                <a href="#">TnC</a>
                             </li>
                         </ul>
                     </div>
@@ -291,19 +301,19 @@
                         <h5 class="footer-title">Social Media</h5>
                         <ul class="list-unstyled mt-3 social-media">
                             <li>
-                                <a href="void::javascript(0)">FaceBook</a>
+                                <a href="#">FaceBook</a>
                             </li>
                             <li>
-                                <a href="void::javascript(0)">Instagram</a>
+                                <a href="#">Instagram</a>
                             </li>
                             <li>
-                                <a href="void::javascript(0)">TikTok</a>
+                                <a href="#">TikTok</a>
                             </li>
                             <li>
-                                <a href="void::javascript(0)">Twitter</a>
+                                <a href="#">Twitter</a>
                             </li>
                             <li>
-                                <a href="void::javascript(0)">Youtube</a>
+                                <a href="#">Youtube</a>
                             </li>
                         </ul>
                     </div>

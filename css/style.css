@@ -308,8 +308,8 @@ div.mb-3 input.form-control{
 }
 
 .moobot-recommendation{
-    padding-top:30px;
-    padding-bottom:25px;
+    padding-top:60px;
+    /* padding-bottom:25px; */
     margin-bottom:30px;
     background-color: #086dff;
 }
