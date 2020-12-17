@@ -20,8 +20,7 @@
                                 $user_name=$_POST['username'];  
                                 $user_pass=$_POST['password'];  
                                         
-                                $con=mysqli_connect('localhost','root','','mobilmoo') or die(mysql_error());  
-                                // mysql_select_db('user_registration') or die("cannot select DB");  
+                                $con=mysqli_connect('localhost','root','','mobilmoo') or die(mysql_error());
                                         
                                 $query="SELECT * FROM user WHERE user_email='".$user_name."' or user_phonenumber='".$user_name."'"; 
                                 $data = $con->query($query);
@@ -35,10 +34,12 @@
                                     echo "<script language='javascript'>alert('Invalid username or password!')</script>";  
                                 }  
                                         
-                            } else {  
+                            } else {
+                                //validate empty username
                                 if($_POST['username'] == ""){
                                     $username_validation = "Username is required";
                                 }
+                                //validate empty password
                                 if(empty($_POST['password'])){
                                     $password_validation = "Password is required";
                                 }

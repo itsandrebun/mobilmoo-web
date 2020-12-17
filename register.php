@@ -55,51 +55,61 @@
                                     echo 'alert("Cannot create this account")';
                                     echo '</script>';
                                 }
-                        
                             } else {
-                                echo "<script language='javascript'>alert('That username already exists! Please try again with another.');</script>";
+                                echo "<script language='javascript'>alert('Email or phone number already exists! Please try again with another.');</script>";
                             }  
                         } else {
+                            //validate empty fullname
                             if(empty($_POST['fullname'])){
                                 $fullname_validation = "Fullname is required";
                             }
+                            //validate length of fullname
                             if(!empty($_POST['fullname']) && (strlen($_POST['fullname']) < 2 || strlen($_POST['fullname']) > 50)){
                                 $fullname_validation = "Fullname must contain min 2 characters and max 50 characters";
                             }
+                            //validate empty phone number
                             if(empty($_POST['phone_number'])){
                                 $phone_number_validation = "Phone Number is required";
                             }
+                            //validate length of phone number
                             if(!empty($_POST['phone_number']) && (strlen($_POST['phone_number']) < 10 || strlen($_POST['phone_number']) > 15)){
                                 $phone_number_validation = "Phone number must contain min 10 characters and max 15 characters";
                             }
+                            //validate fullname contains digit or not
                             if(!empty($_POST['phone_number']) && !is_numeric($_POST['phone_number'])){
                                 $phone_number_validation = "Phone Number must be number";
                             }
+                            //validate empty email
                             if(empty($_POST['email'])){
                                 $email_validation = "Email is required";
                             }
-                            if(!empty($_POST['email']) && strpos($_POST['email'], '@') == false){
-                                $email_validation = "Email must contain @";
-                            }
+                            //validate length of email
                             if(!empty($_POST['email']) && strlen($_POST['email']) < 10){
                                 $email_validation = "Email must contain min 10 characters";
                             }
+                            //validate email contains @ or not
+                            if(!empty($_POST['email']) && strpos($_POST['email'], '@') == false){
+                                $email_validation = "Email must contain @";
+                            }
+                            //validate length of password
                             if(empty($_POST['password'])){
                                 $password_validation = "Password is required";
                             }
+                            //validate password contains capital or not
                             if(!empty($_POST['password']) && !preg_match('/[A-Z]/', $_POST['password'])){
                                 $password_validation = "Password must contain at least 1 uppercase";
                             }
+                            //validate length of password
                             if(!empty($_POST['password']) && strlen($_POST['password']) < 6){
                                 $password_validation = "Password must contain min 6 characters";
                             }
+                            //validate checkbox is checked or not
                             if(!isset($_POST['agree'])){
                                 $checkbox_validation = "You should check the box to agree with this terms and conditions";
                                 $is_checked = false;
                             }else{
                                 $is_checked = true;
                             }
-                            // echo "All fields are required!";  
                         }
                     }
                 ?>
